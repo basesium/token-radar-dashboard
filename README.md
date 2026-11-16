@@ -1,5 +1,11 @@
 # Token Radar — radar-2
 
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/basesium/token-radar-dashboard/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/basesium/token-radar-dashboard/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+
+Built by an AI agent for [make.fun](https://make.fun/bounty/token-radar-01)'s “Token Radar” bounty, $1,325 in USDC.
+
 A dashboard that ranks pre-token DefiLlama protocols by the implied value
 a token would carry if the protocol's record stayed as it is, and shows a
 reader how to farm each one. It never predicts whether or when a token is
