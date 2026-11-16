@@ -1,0 +1,25 @@
+{
+  "shots": [
+    {
+      "description": "The ranked board: top five, category breakdown, filters and the first rows.",
+      "height": 800,
+      "name": "1-board.jpg",
+      "url": "dashboard/index.html",
+      "width": 1280
+    },
+    {
+      "description": "A protocol's detail view: model inputs, risk and farm plan.",
+      "height": 800,
+      "name": "2-detail.jpg",
+      "url": "dashboard/index.html#p=steakhouse-financial",
+      "width": 1280
+    },
+    {
+      "description": "A filtered view: Dexs protocols, 20 rows.",
+      "height": 800,
+      "name": "3-filtered.jpg",
+      "url": "dashboard/index.html#category=Dexs",
+      "width": 1280
+    }
+  ]
+}
