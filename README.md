@@ -6,20 +6,23 @@
 
 Built by an AI agent for [make.fun](https://make.fun/bounty/token-radar-01)'s “Token Radar” bounty, $1,325 in USDC.
 
-A dashboard that ranks pre-token DefiLlama protocols by the implied value
-a token would carry if the protocol's record stayed as it is, and shows a
-reader how to farm each one. It never predicts whether or when a token is
-issued: implied value is the entry's own claim, never make.fun's.
+Token Radar ranks pre-token DefiLlama protocols by the implied value a
+token would carry if each protocol's record stayed as it is, and shows
+the reader how to farm each one. It never predicts whether or when a
+token is issued: implied value is the entry's own claim, never make.fun's.
 
 ## Data
 
-The only data is the sealed snapshot `input/snapshot.json`, fetched once by
-the house from DefiLlama's public protocol index (758 protocols at or above
-$5M TVL, as of 2026-11-14). The watchlist is the floor: 40 protocols with
-at least $50M of TVL and no token on record. The board ranks all 40, plus
-260 pre-token protocols below the floor found by the early radar — 300 rows
-in all. Live-token protocols are set aside with their market caps, the
-market's own values, never mixed into the ranking.
+The entry reads nothing but the sealed snapshot `input/snapshot.json`,
+fetched once by the house from DefiLlama's public protocol index (758
+protocols at or above $5M TVL, as of 2026-11-14). The watchlist is the
+floor: 40 protocols with at least $50M of TVL and no token on record.
+The board ranks all 40, plus 260 pre-token protocols below the floor
+found by the early radar — 300 rows in all. Live-token protocols are
+kept apart with their market caps, the market's own values, never mixed
+into the ranking. On this snapshot the board holds 226 rows: the 40
+watchlist protocols plus 186 early-radar rows, with 24 live-token
+protocols set aside.
 
 ## Model (radar-2)
 
@@ -30,18 +33,19 @@ implied = round( tvl_usd x 0.25
   x (0.90 + 0.025 x min(chains, 4)) )
 ```
 
-TVL, seven-day growth and age with no token come from the snapshot; breadth
-counts the chains a protocol runs on (up to four). Growth weighs more than
-in the house model because a launch is priced on where a protocol is going,
-and breadth can move a row by at most 10%. No protocol name is
-special-cased — one function scores every row, and the page recomputes each
-row and checks the number `board.json` carries. Each row also carries a
-risk read off the same figures (young and fast-growing is higher risk) and
-a seven-step farm plan with what each step costs and how long it takes,
-derived from the protocol's category, chains, TVL and age.
+TVL, seven-day growth and age with no token come from the snapshot;
+breadth counts the chains a protocol runs on (up to four). Growth weighs
+more than in the house model because a launch is priced on where a
+protocol is going, and breadth can move a row by at most 10%. No
+protocol name is special-cased — one function scores every row, and the
+page recomputes each row and checks the number `board.json` carries.
+Each row also carries a risk read off the same figures (young and
+fast-growing is higher risk) and a seven-step farm plan with what each
+step costs and how long it takes, derived from the protocol's category,
+chains, TVL and age.
 
-A benchmark is shown beside the board: live tokens in this snapshot trade
-at a median multiple of their TVL, so a reader can see how the model's
+A benchmark sits beside the board: live tokens in this snapshot trade at
+a median multiple of their TVL, so a reader can see how the model's
 implied multiples compare with the market's own.
 
 ## Dashboard
